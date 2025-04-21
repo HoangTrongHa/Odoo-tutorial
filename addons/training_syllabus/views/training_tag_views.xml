@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_training_tag_form" model="ir.ui.view">
+        <field name="name">training.tag.form</field>
+        <field name="model">training.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Lectures">
+                            <field name="lecture_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="module_id"/>
+                                    <field name="duration"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_training_tag_tree" model="ir.ui.view">
+        <field name="name">training.tag.tree</field>
+        <field name="model">training.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_training_tag_search" model="ir.ui.view">
+        <field name="name">training.tag.search</field>
+        <field name="model">training.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+</odoo> 

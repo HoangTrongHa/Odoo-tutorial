@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_training_root" name="Training" sequence="10"/>
+
+    <menuitem id="menu_training_configuration" 
+              name="Configuration" 
+              parent="menu_training_root" 
+              sequence="10"/>
+
+    <menuitem id="menu_training_tags" 
+              name="Tags" 
+              parent="menu_training_configuration" 
+              action="action_training_tag"
+              sequence="10"/>
+
+    <menuitem id="menu_training_modules" 
+              name="Modules" 
+              parent="menu_training_root" 
+              action="action_training_module"
+              sequence="20"/>
+
+    <menuitem id="menu_training_lectures" 
+              name="Lectures" 
+              parent="menu_training_root" 
+              action="action_training_lecture"
+              sequence="30"/>
+
+    <!-- Actions -->
+    <record id="action_training_module" model="ir.actions.act_window">
+        <field name="name">Training Modules</field>
+        <field name="res_model">training.module</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_training_lecture" model="ir.actions.act_window">
+        <field name="name">Training Lectures</field>
+        <field name="res_model">training.lecture</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_training_tag" model="ir.actions.act_window">
+        <field name="name">Training Tags</field>
+        <field name="res_model">training.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo> 
